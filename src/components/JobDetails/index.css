@@ -1,0 +1,160 @@
+.job-details-container {
+  background-color: #2c364c;
+  width: 100%;
+  padding: 20px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.job-full-details-container {
+  background-color: #000000;
+  padding: 20px;
+}
+
+.job-details-company-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.job-company-logo {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.job-title {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 20px;
+  margin: 0px;
+}
+
+.job-rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.job-rating {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Roboto';
+}
+
+.job-location-package-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-location-type-container {
+  display: flex;
+  align-items: center;
+}
+
+.job-icon-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.job-icon-name {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.job-package {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+
+.job-line {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+}
+
+.description-visit-link-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 25px;
+}
+
+.job-link {
+  display: flex;
+  color: #6366f1;
+  font-size: 20px;
+  font-family: 'Roboto';
+  text-decoration: none;
+}
+
+.job-description {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Roboto';
+}
+
+.job-skill-ul-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.skill-li-container {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.skill-name {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Roboto';
+}
+
+.skill-logo {
+  width: 35px;
+  margin-right: 15px;
+}
+
+.life-at-company-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.life-at-company-image {
+  width: 300px;
+  height: 300px;
+}
+
+.similar-heading {
+  font-size: 35px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+
+.similar-job-ul-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  list-style-type: none;
+}
+
+@media screen and (min-width: 768px) {
+  .life-at-company-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .life-at-company-image {
+    width: 100%;
+  }
+}
