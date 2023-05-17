@@ -56,7 +56,7 @@ const apiStatusConstants = {
 class AllJobsSection extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
-    activeEmploymentId: '',
+    checkedEmploymentType: [],
     activeSalaryRangId: '',
     searchInput: '',
     finalSearchValue: '',
@@ -73,11 +73,13 @@ class AllJobsSection extends Component {
     })
     const jwtToken = Cookies.get('jwt_token')
     const {
-      activeEmploymentId,
+      checkedEmploymentType,
       activeSalaryRangId,
       finalSearchValue,
     } = this.state
-    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentId}&minimum_package=${activeSalaryRangId}&search=${finalSearchValue}`
+    const activeEmploymentTypesId = checkedEmploymentType.join(',')
+    console.log(activeEmploymentTypesId)
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${activeEmploymentTypesId}&minimum_package=${activeSalaryRangId}&search=${finalSearchValue}`
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -109,7 +111,28 @@ class AllJobsSection extends Component {
   }
 
   onChangeCheckBox = event => {
-    this.setState({activeEmploymentId: event.target.value}, this.getJobsList)
+    const {checkedEmploymentType} = this.state
+    const employmentType = event.target.value
+    console.log(employmentType)
+
+    if (checkedEmploymentType.includes(employmentType)) {
+      this.setState(
+        prevState => ({
+          checkedEmploymentType: [...prevState.checkedEmploymentType],
+        }),
+        this.getJobsList,
+      )
+    } else {
+      this.setState(
+        prevState => ({
+          checkedEmploymentType: [
+            ...prevState.checkedEmploymentType,
+            employmentType,
+          ],
+        }),
+        this.getJobsList,
+      )
+    }
   }
 
   onChangeRadio = event => {
@@ -138,7 +161,7 @@ class AllJobsSection extends Component {
     this.setState(
       {
         apiStatus: apiStatusConstants.initial,
-        activeEmploymentId: '',
+        checkedEmploymentType: [],
         activeSalaryRangId: '',
         searchInput: '',
         finalSearchValue: '',
